@@ -55,6 +55,7 @@ public class FragmentTabs extends Fragment {
 
             viewPager = (ViewPager) view.findViewById(R.id.conter_base);
             poblarViewPager(viewPager);
+
             pstañas.setupWithViewPager(viewPager);
 
         }
@@ -77,6 +78,7 @@ public class FragmentTabs extends Fragment {
         adapter.addFragment(new FragmentDirect(), "Direction");
         adapter.addFragment(new FragmentTarjet(), "tarjeta");
         viewPager.setAdapter(adapter);
+        viewPager.setOffscreenPageLimit(2);//mantiene numero de Tabs con sus fragmentos sin eliminarce y refrescar
     }
 
     @Override
